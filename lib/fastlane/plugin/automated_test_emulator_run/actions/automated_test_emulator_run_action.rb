@@ -148,7 +148,7 @@ module Fastlane
         end
 
         def self.wait_for_emulator_boot(adb_controller, avd_controller)
-            timeoutInSeconds= 240.0
+            timeoutInSeconds= 360.0
             startTime = Time.now
 
             launch_status = false
@@ -159,7 +159,7 @@ module Fastlane
               currentTime = Time.now
 
               if (currentTime - startTime) >= timeoutInSeconds
-                UI.message("AVD loading took more than 4 minutes. Restarting launch".red)
+                UI.message("AVD loading took more than 6 minutes. Restarting launch".red)
                 launch_status = false
                 break
               end
